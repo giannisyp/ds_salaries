@@ -34,11 +34,11 @@ def get_jobs(keyword, num_jobs, verbose, path, slp_time):
         driver.find_element(By.ID, 'onetrust-accept-btn-handler').click()
         driver.find_element(By.ID, 'SignInButton').click()
         time.sleep(2)
-        driver.find_element(By.ID, "fishbowlCoRegEmail").send_keys("giannakis_@hotmail.com")
+        driver.find_element(By.ID, "fishbowlCoRegEmail").send_keys("put your glassdoor email here")
         time.sleep(2)
         driver.find_element(By.CLASS_NAME, "emailButton").click()
         time.sleep(2)
-        driver.find_element(By.ID, "fishbowlCoRegPassword").send_keys("skatopsixos")
+        driver.find_element(By.ID, "fishbowlCoRegPassword").send_keys("put your glassdoor password here")
         time.sleep(2)
         driver.find_element(By.NAME, "submit").click()
         time.sleep(12)
@@ -111,12 +111,13 @@ def get_jobs(keyword, num_jobs, verbose, path, slp_time):
 
             # add job to jobs
 
-        # Clicking on the "next page" button
-        try:
-            driver.find_element(By.CLASS_NAME, 'button_Button__meEg5').click()
-        except NoSuchElementException:
-            print("Scraping terminated before reaching target number of jobs. Needed {}, got {}.".format(num_jobs,
-                                                                                                         len(jobs)))
-            break
+            # Clicking on the "next page" button
+            if len(jobs) % 5 == 0:
+                try:
+                    driver.find_element(By.CLASS_NAME, 'button_Button__meEg5').click()
+                except NoSuchElementException:
+                    print("Scraping terminated before reaching target number of jobs. Needed {}, got {}.".format(num_jobs,
+                                                                                                                 len(jobs)))
+                    break
 
     return pd.DataFrame(jobs)  # This line converts the dictionary object into a pandas DataFrame.
