@@ -111,7 +111,7 @@ def get_jobs(keyword, num_jobs, verbose, path, slp_time):
 
             # add job to jobs
 
-            # Clicking on the "next page" button
+            # Clicking on the "show more" button
             if len(jobs) % 5 == 0:
                 try:
                     driver.find_element(By.CLASS_NAME, 'button_Button__meEg5').click()
