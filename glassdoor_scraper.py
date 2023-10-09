@@ -70,29 +70,45 @@ def get_jobs(keyword, num_jobs, verbose, path, slp_time):
 
             while not collected_successfully:
                 try:
-                    company_data = job_button.text
+                    company_name = driver.find_element(By.CSS_SELECTOR,'.JobDetails_jobDetailsHeader__qKuvs .css-8wag7x').text
+                    job_name = driver.find_element(By.CLASS_NAME, 'JobDetails_jobTitle__Rw_gn').text
                     collected_successfully = True
                 except:
-                    time.sleep(5)
+                    time.sleep(2)
 
-            # try:
-            #     salary_estimate = driver.find_element(By.XPATH,'.//span[@class="gray salary"]').text
-            # except NoSuchElementException:
-            #     salary_estimate = -1  # You need to set a "not found value. It's important."
 
-            # try:
-            #     rating = driver.find_element(By.XPATH,'.//span[@class="rating"]').text
-            # except NoSuchElementException:
-            #     rating = -1  # You need to set a "not found value. It's important."
+            try:
+                job_rating = driver.find_element(By.CSS_SELECTOR,'.JobDetails_jobDetailsHeader__qKuvs .css-rnnx2x').text
+            except NoSuchElementException:
+                job_rating = -1  # You need to set a "not found value. It's important."
+
+            try:
+                salary_estimate = driver.find_element(By.CLASS_NAME,'SalaryEstimate_averageEstimate__xF_7h').text
+            except NoSuchElementException:
+                salary_estimate = -1  # You need to set a "not found value. It's important."
+
+            try:
+                location = driver.find_element(By.CLASS_NAME, 'JobDetails_location__MbnUM').text
+            except NoSuchElementException:
+                location = -1  # You need to set a "not found value. It's important."
 
             # Printing for debugging
             if verbose:
-                print("Company Data: {}".format(company_data))
+                print("Company Name: {}".format(company_name))
+                print("Job Name: {}".format(job_name))
+                print("Location: {}".format(location))
+                print("Job Rating:".format(job_rating))
+                print("Salary Estimate:".format(salary_estimate))
 
 
 
-            jobs.append({"Company Data:": company_data
+            jobs.append({"Company Name:": company_name,
+                         "Job Name:": job_name,
+                         "Location:": location,
+                         "Job Rating:": job_rating,
+                         "Salary Estimate:": salary_estimate
                          })
+
             # add job to jobs
 
         # Clicking on the "next page" button
