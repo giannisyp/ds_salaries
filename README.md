@@ -37,7 +37,7 @@ Flask Productionization: https://towardsdatascience.com/productionize-a-machine-
 # EDA
 I looked at the distributions of the data and the value counts for the various categorical variables
 
-![salary_by_job_title](https://github.com/giannisyp/ds_salaries/assets/119696474/9c1ba80a-e60c-4711-a82f-77faa4790b5b)
+
 
 
 # Model Building
