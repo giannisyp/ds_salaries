@@ -13,6 +13,7 @@ Packages: pandas, numpy, sklearn, matplotlib, seaborn, selenium, flask, json, pi
 
 Flask Productionization: https://towardsdatascience.com/productionize-a-machine-learning-model-with-flask-and-heroku-8201260503d2
 
+![salary_by_job_title](https://github.com/giannisyp/ds_salaries/assets/119696474/eb6548c8-b9c9-4643-980b-4f69baa3ab22)
 
 
 
