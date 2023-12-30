@@ -9,7 +9,7 @@
 
 # Code and Resources Used
 Python Version: 3.11.3
-Packages: pandas, numpy, sklearn, matplotlib, seaborn, selenium, flask, json, pickle
+Packages: pandas, numpy, sklearn, matplotlib, seaborn, selenium, flask, json, pickle.
 
 Flask Productionization: https://towardsdatascience.com/productionize-a-machine-learning-model-with-flask-and-heroku-8201260503d2
 
