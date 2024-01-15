@@ -7,7 +7,7 @@
 * Built a client facing API using flask
 
 
-# Code and Resources Used
+# Code and Resources Used.
 Python Version: 3.11.3
 Packages: pandas, numpy, sklearn, matplotlib, seaborn, selenium, flask, json, pickle.
 
